@@ -1,5 +1,3 @@
-/* code stolen from http://clc-wiki.net/wiki/K%26R2_solutions:Chapter_1:Exercise_16 */
-
 #include <stdio.h>
 #define MAXLENGTH 1000
 #define LIMIT 80
