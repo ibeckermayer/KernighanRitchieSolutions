@@ -1,0 +1,6 @@
+
+s = 0123456
+ss = 0246
+
+squeezed ss from s: 135
+
