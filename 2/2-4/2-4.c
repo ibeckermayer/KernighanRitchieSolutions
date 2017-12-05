@@ -16,7 +16,7 @@ int main()
 // squeeze all the chars in ss out of s
 void squeeze (char s[], char ss[])
 {
-	int i, j, k;
+	int i, j;
 
 	for (i = j = 0; s[i] != '\0'; i++)
 		if (!is_in(s[i], ss))
