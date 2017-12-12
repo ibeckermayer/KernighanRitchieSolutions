@@ -1,0 +1,5 @@
+45 cos
+45 sin
+2 3 pow
+0 exp
+1 exp
