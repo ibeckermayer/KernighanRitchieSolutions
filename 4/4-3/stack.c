@@ -21,3 +21,26 @@ double pop(void)
     return 0.0;
   }
 }
+
+void print_top(void)
+{
+  printf("top of stack is %f\n", val[sp]);
+}
+
+double duplicate_top(void)
+{
+  return val[sp];
+}
+
+void swap_top_two(void)
+{
+  double temp1 = val[sp];
+  double temp2 = val[sp-1];
+  val[sp] = temp2;
+  val [sp-1] = temp2;
+}
+
+void clear_stack(void)
+{
+  sp = 0;
+}
