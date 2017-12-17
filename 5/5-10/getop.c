@@ -19,8 +19,11 @@ int getop(char s[], int argc, char *argv[])
       return 130;
     if (c == 'p' && d == 'o' && e == 'w')
       return 131;
-    else
+    else {
+      ungetch(e);
+      ungetch(d);
       return c;
+    }
   }
   i = 0;
   if (isdigit(c))
