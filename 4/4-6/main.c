@@ -51,7 +51,7 @@ int main()
       op2 = pop();
       push(pow(pop(), op2));
       break;
-    case '\n': case '\r': case 'n':
+    case '\n':
       printf("\t%.8g\n", pop());
       break;
     default:
