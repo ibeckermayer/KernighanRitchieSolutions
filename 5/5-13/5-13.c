@@ -18,9 +18,20 @@ int main(int argc, char *argv[])
   char lines[MAXLINES*MAXLEN];
   int n = 10;
 
-  printf("%s\n", *(argv+1));
+  if ((*++argv)[0] == '-' && *++argv[0] == 'n')
+    n = atoi(*++argv);
+  else {
+    printf("illegal option\n");
+    return -1;
+  }
+
   nlines = readlines2(lineptr, lines, MAXLINES);
-  printf("%s\n", *(lineptr));
+
+  if (nlines < n)
+    n = nlines;
+
+  while (n-- > 0)
+    printf("%s\n", *(lineptr+nlines-n-1));
  }
 
 int readlines2(char *lineptr[], char *lines, int maxlines)
@@ -48,7 +59,6 @@ int getline2(char *s, int lim)
 {
   char *p;
   int c;
-
   p = s;
   while (--lim > 0 && (c = getchar()) != EOF && c != '\n')
     *p++ = c;
