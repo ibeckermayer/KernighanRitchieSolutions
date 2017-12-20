@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
   char lines[MAXLINES*MAXLEN];
   int numeric = 0;
   int rev = 0;
+  int fold = 0;
 
   while (--argc > 0 && (*++argv)[0] == '-')
     while (c = *++argv[0])
@@ -30,6 +31,9 @@ int main(int argc, char *argv[])
       case 'r':
 	rev = 1;
 	break;
+      case 'f':
+	fold = 1;
+	break;
       default:
 	printf("sort: illegal option %c\n", c);
 	argc = -1;
@@ -37,13 +41,13 @@ int main(int argc, char *argv[])
       }
 
   if (argc != 0) {
-    printf("Usage: sort [-n] [-r] < file\n");
+    printf("Usage: sort [-n] [-r] [-f] < file\n");
     return 1;
   }
   else
     if ((nlines = readlines(lineptr, lines, MAXLINES)) >= 0) {
       qsort2 ((void **) lineptr, 0, nlines-1,
-	      (int (*)(void*,void*))(numeric ? numcmp : strcmp));
+	      (int (*)(void*,void*))(numeric ? numcmp : fold ? srtcasecmp:strcmp));
       if (rev)
 	reverse((void **) lineptr, nlines); 
       writelines(lineptr, nlines);
