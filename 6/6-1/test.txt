@@ -1,0 +1,8 @@
+#define something
+#include <something_else>
+
+int main {
+    char *c = "a string literal";
+    char cc = 'c';
+/* here's a comment */
+}
