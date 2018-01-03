@@ -46,19 +46,6 @@ int main(int argc, char *argv[])
     }
   }
 }
-/* 	while (getline2(line1, MAXLINE, fp1) && getline2(line2, MAXLINE, fp2)) { */
-/* 	  cur_line++; */
-/* 	  if (strcmp(line1, line2)) { */
-/* 	    printf("Files first differ at line %d\n", cur_line); */
-/* 	    return 0; */
-/* 	  } */
-/* 	} */
-/* 	if (strcmp(line1, line2) == 0) */
-/* 	  printf("Files are the same\n"); */
-/* 	else */
-/* 	  printf("Files first differ at lineeee %d\n", cur_line); */
-/* 	return 0; */
-/*       } */
 
 /* filecopy: copy file ifp to file ofp */
 void filecopy(FILE *ifp, FILE *ofp)
